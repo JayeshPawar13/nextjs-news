@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+import path from "path";
+const nextConfig = {
+  experimental: {
+    outputFileTracingIncludes: {
+      "*": [path.join(process.cwd(), "data.db")],
+    },
+  },
+};
 
 export default nextConfig;
